@@ -3,7 +3,7 @@
  * Use null until an artifact is public.
  */
 const RELEASE = {
-  paper: null, // Example: "assets/paper.pdf"
+  paper: "assets/preprint.pdf",
   arxiv: null, // Example: "https://arxiv.org/abs/2609.00000"
   code: "https://github.com/evoscm/EvoSCM",
   bibtex: null,

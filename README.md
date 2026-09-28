@@ -17,11 +17,11 @@ Then open `http://localhost:8000`.
 ## Add release links
 
 Edit the `RELEASE` object at the top of `assets/js/site.js`. The hero controls
-show their labels without status subtitles. Paper and arXiv stay disabled until
-their URLs are supplied; Code links to `https://github.com/evoscm/EvoSCM`.
+show their labels without status subtitles. Paper opens `assets/preprint.pdf`;
+arXiv stays disabled until its URL is supplied. Code links to
+`https://github.com/evoscm/EvoSCM`.
 BibTeX points to the citation section, where copying is disabled until the
-citation is supplied. The Code link is also present in `index.html` for visitors
-without JavaScript; keep it in sync if the repository URL changes.
+citation is supplied. Paper and Code links are also present in `index.html` for
+visitors without JavaScript; keep them in sync if their URLs change.
 
-When the final paper is ready, copy it to `assets/paper.pdf` and set `paper` to
-`assets/paper.pdf`.
+To update the paper, replace `assets/preprint.pdf` with the new PDF.
