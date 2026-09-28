@@ -20,7 +20,7 @@
     <title>EvoSCM: Scientific Belief Revision Through Causal Model Evolution and Experimentation</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/hero.css?v=20260928-resource-icons" />
+    <link rel="stylesheet" href="assets/css/hero.css?v=20260928-raster-hero" />
     <link rel="stylesheet" href="assets/css/research.css?v=20260928-caption-revert" />
     <script type="application/ld+json">
       {
@@ -52,7 +52,12 @@
 
     <main id="main">
       <section class="paper-header page-width" id="top">
-        <div class="hero-art" aria-hidden="true"><canvas data-science-field></canvas></div>
+        <div class="hero-art" aria-hidden="true">
+          <picture>
+            <source media="(max-width: 780px)" srcset="assets/figures/hero-mobile.webp" />
+            <img src="assets/figures/hero-desktop.webp" alt="" width="1440" height="828" fetchpriority="high" decoding="async" />
+          </picture>
+        </div>
         <div class="hero-axis hero-axis-top" aria-hidden="true"></div>
         <div class="hero-content">
         <p class="preprint-label">Preprint</p>
@@ -99,7 +104,7 @@
 
       <figure class="paper-figure page-width" id="figure-1">
         <button type="button" data-lightbox="assets/figures/first_image.webp" data-caption="Figure 1">
-          <img src="assets/figures/first_image.webp" alt="Discovery performance and transferability of EvoSCM on DiscoverPhysics" width="1695" height="755" />
+          <img src="assets/figures/first_image.webp" alt="Discovery performance and transferability of EvoSCM on DiscoverPhysics" width="1695" height="755" loading="lazy" decoding="async" />
         </button>
         <figcaption><strong>Figure 1: Discovery performance and transferability of EvoSCM on DiscoverPhysics.</strong> (a) <em>Faster Convergence &amp; Lower Error:</em> EvoSCM achieves lower prediction error while requiring fewer experimental episodes than the baseline agent. (b) <em>Cross-Model Transferability:</em> evolved SCMs can be transferred directly across different base models.</figcaption>
       </figure>
@@ -226,6 +231,5 @@
       <div><img src="" alt="" data-lightbox-image /><p data-lightbox-caption></p></div>
     </dialog>
     <script src="assets/js/site.js?v=20260928-code-link"></script>
-    <script src="assets/js/hero.js?v=20260928-static"></script>
   </body>
 </html>

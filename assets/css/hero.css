@@ -3,7 +3,7 @@
   background: #080e12;
   border-bottom-color: #ffffff12;
 }
-.site-header.is-scrolled { background: rgb(8 14 18 / 96%); }
+.site-header.is-scrolled { background: #080e12; backdrop-filter: none; }
 .paper-header {
   position: relative;
   isolation: isolate;
@@ -24,7 +24,9 @@
     radial-gradient(ellipse at 79% 47%, #15343d80, transparent 52%),
     radial-gradient(ellipse at 98% 91%, #30444350, transparent 48%);
 }
-.hero-art canvas { display: block; width: 100%; height: 100%; }
+.hero-art picture,
+.hero-art img { display: block; width: 100%; height: 100%; }
+.hero-art img { object-fit: fill; }
 .hero-art::after {
   position: absolute;
   inset: 0;
@@ -75,7 +77,6 @@
   border-color: #829ca64d;
   border-radius: 2px;
   background: #12212b70;
-  backdrop-filter: blur(10px);
   text-align: left;
 }
 .resource-icon {
