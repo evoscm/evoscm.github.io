@@ -1,0 +1,186 @@
+/* Extend the hero's optical-lab palette without changing the paper assets. */
+:root {
+  --research-bg: #0b141a;
+  --research-panel: #101e27;
+  --research-line: #a1c5d126;
+  --research-text: #c2d0d6;
+  --research-muted: #9dafb8;
+  --research-heading: #edf3f5;
+  --research-accent: #a1cecf;
+}
+body { background: var(--research-bg); }
+main {
+  background:
+    radial-gradient(ellipse 900px 650px at 100% 38%, #2547531a, transparent),
+    var(--research-bg);
+}
+.paper-section#abstract {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(0, 840px);
+  gap: 64px;
+  width: 100%;
+  max-width: none;
+  padding: 100px max(40px, calc((100% - var(--page)) / 2)) 80px;
+  border-top: 1px solid #9bbac518;
+  background: linear-gradient(180deg, #080e12, var(--research-bg));
+}
+.paper-section#abstract h2,
+.citation-section > h2 {
+  color: var(--research-heading);
+  font-size: 34px;
+  font-weight: 400;
+}
+.paper-section#abstract h2::before,
+.citation-section > h2::before {
+  display: block;
+  width: 32px;
+  height: 1px;
+  margin-bottom: 24px;
+  background: var(--research-accent);
+  content: "";
+}
+.abstract-text p { color: var(--research-text); }
+.section-title {
+  position: relative;
+  padding-top: 36px;
+  border-color: var(--research-line);
+}
+.section-title::before {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 48px;
+  height: 1px;
+  background: var(--research-accent);
+  content: "";
+}
+.section-title::after {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  width: 1px;
+  height: 9px;
+  background: #9bbac55c;
+  content: "";
+}
+.section-title h2 {
+  color: var(--research-heading);
+  font-weight: 400;
+}
+.paper-figure {
+  padding: 12px;
+  border: 1px solid var(--research-line);
+  border-radius: 5px;
+  background: linear-gradient(135deg, #15242d, #0e1a22);
+}
+.paper-figure button {
+  padding: 24px;
+  border-color: #d8e2e5;
+  border-radius: 2px;
+  background: #fff;
+}
+.paper-figure button:hover { border-color: #a1cecf; }
+.paper-figure figcaption {
+  margin: 0;
+  padding: 23px 16px 14px;
+  color: var(--research-muted);
+  line-height: 1.75;
+}
+.paper-figure figcaption strong { color: #dce7eb; }
+.analysis-text {
+  width: 100%;
+  padding: 0 0 0 28px;
+  border-left: 1px solid #91b8c24d;
+  color: var(--research-text);
+}
+#analysis { padding-bottom: 104px; }
+.results-section {
+  position: relative;
+  padding-block: 64px 100px;
+  border-block: 1px solid var(--research-line);
+  background:
+    radial-gradient(ellipse at 100% 0, #294d5729, transparent 58%),
+    #101d25;
+}
+.results-section .section-title { padding-top: 0; border-top: 0; }
+.results-section .section-title::before,
+.results-section .section-title::after { display: none; }
+.result-tabs { border-bottom-color: #b0c9d130; }
+.result-tabs button { color: #9fafb8; }
+.result-tabs button:hover { color: #e5eef1; }
+.result-tabs button[aria-selected="true"] {
+  color: #d9eeee;
+  border-bottom-color: var(--research-accent);
+}
+.result-panel h3 { color: var(--research-heading); font-weight: 400; }
+.result-panel > .table-caption { color: #aebfc7; }
+.table-caption strong { color: #e1ebef; }
+.table-wrap {
+  border-block: 1px solid #96aeb7;
+  border-radius: 3px;
+  background: #f1f5f5;
+  scrollbar-color: #819da7 #dde6e8;
+}
+table { color: #34474f; }
+th, td { border-bottom-color: #dce5e8; }
+thead th {
+  color: #243a45;
+  background: #e1eaed;
+  border-bottom-color: #bfced4;
+}
+tbody th {
+  color: #344b56;
+  border-right-color: #cedce0;
+  background: #e9f0f2;
+}
+.group-start th, .group-start td { border-top-color: #9db1ba; }
+.ours td { color: #234e54; background: #d5e8e6; }
+.chemistry-table thead tr:first-child th:not(:first-child),
+.chemistry-table tbody td:nth-child(even) { border-left-color: #cbdade; }
+.citation-section.page-width.narrow {
+  padding-block: 80px;
+  border-top: 0;
+  background: linear-gradient(180deg, var(--research-bg), #080e12);
+}
+.citation-box {
+  border-color: var(--research-line);
+  background: #10202980;
+}
+.citation-box > div {
+  color: #b8cbd2;
+  border-color: var(--research-line);
+}
+.citation-box button {
+  color: #aabdc5;
+  border-color: #98bac640;
+}
+.citation-box button:not(:disabled) { color: var(--research-accent); }
+.citation-box pre { color: #b6c9d1; }
+.site-footer {
+  color: #8ca1ac;
+  border-color: var(--research-line);
+  background: #080e12;
+}
+.site-footer .wordmark { color: #d8e5e9; }
+@media (min-width: 1024px) {
+  .analysis-text { font-size: clamp(16px, 1.56vw, 18px); }
+}
+@media (max-width: 1100px) {
+  .paper-section#abstract { grid-template-columns: 150px minmax(0, 1fr); gap: 40px; }
+}
+@media (max-width: 780px) {
+  .paper-section#abstract {
+    display: block;
+    padding: 64px 20px 48px;
+  }
+  .paper-section#abstract h2 { margin-bottom: 28px; }
+  .paper-section#abstract h2::before,
+  .citation-section > h2::before { margin-bottom: 20px; }
+  .paper-figure { padding: 7px; }
+  .paper-figure button { padding: 10px; }
+  .paper-figure figcaption { padding: 17px 9px 11px; }
+  .analysis-text { padding-left: 18px; }
+  #analysis { padding-bottom: 64px; }
+  .results-section { padding-block: 48px 64px; }
+  .citation-section.page-width.narrow { padding-block: 56px; }
+}
