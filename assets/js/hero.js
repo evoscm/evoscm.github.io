@@ -1,9 +1,8 @@
 (() => {
-  // Abstract optical sculpture, not a scientific diagram or experimental data.
+  // Static optical sculpture, not a scientific diagram or experimental data.
   const canvas = document.querySelector('[data-science-field]');
   const context = canvas?.getContext('2d');
   if (!context) return;
-  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const rings = [];
   for (let j = 0; j < 104; j++) {
     const v = j / 104 * Math.PI * 2;
@@ -20,14 +19,14 @@
     }
     rings.push(points);
   }
-  let width = 0, height = 0, frame = 0, visible = true, last = 0;
-  const draw = (time = 0) => {
+  let width = 0, height = 0;
+  const draw = () => {
     context.clearRect(0, 0, width, height);
     const mobile = width < 781;
     const scale = mobile ? width * 0.31 : Math.min(width * 0.225, height * 0.47);
     const centerX = width * (mobile ? 0.93 : 0.81);
     const centerY = height * (mobile ? 0.54 : 0.48);
-    const angle = -0.62 + (motion.matches ? 0 : Math.sin(time / 18000) * 0.045);
+    const angle = -0.62;
     const ca = Math.cos(angle), sa = Math.sin(angle);
     const tilt = 1.04;
     const ct = Math.cos(tilt), st = Math.sin(tilt);
@@ -60,16 +59,9 @@
       context.stroke();
     }
   };
-  const tick = time => {
-    if (!visible || document.hidden || motion.matches) { frame = 0; return; }
-    if (time - last > 48) { draw(time); last = time; }
-    frame = requestAnimationFrame(tick);
-  };
-  const start = () => {
-    if (visible && !document.hidden && !motion.matches && !frame) frame = requestAnimationFrame(tick);
-  };
   const resize = () => {
     const bounds = canvas.getBoundingClientRect();
+    if (bounds.width === width && bounds.height === height) return;
     width = bounds.width;
     height = bounds.height;
     const dpr = Math.min(devicePixelRatio || 1, 2);
@@ -77,11 +69,7 @@
     canvas.height = Math.round(height * dpr);
     context.setTransform(dpr, 0, 0, dpr, 0, 0);
     draw();
-    start();
   };
   new ResizeObserver(resize).observe(canvas);
-  new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; start(); }).observe(canvas);
-  document.addEventListener('visibilitychange', start);
-  motion.addEventListener('change', () => { draw(); start(); });
   resize();
 })();
