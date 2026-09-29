@@ -4,9 +4,14 @@
  */
 const RELEASE = {
   paper: "assets/preprint.pdf",
-  arxiv: null, // Example: "https://arxiv.org/abs/2609.00000"
+  arxiv: "https://arxiv.org/abs/2609.01526",
   code: "https://github.com/evoscm/EvoSCM",
-  bibtex: null,
+  bibtex: `@article{zhao2026evoscm,
+  title={{EvoSCM}: Scientific Belief Revision Through Causal Model Evolution and Experimentation},
+  author={Zhao, Qing and Li, Haowei and Deng, Weijian and Yang, Sibei and Wei, Pengxu and Lin, Liang},
+  journal={arXiv preprint arXiv:2609.01526},
+  year={2026}
+}`,
 };
 
 const releaseLabels = {

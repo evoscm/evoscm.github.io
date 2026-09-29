@@ -78,7 +78,7 @@
             <svg class="resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h6"/></svg>
             <span>Paper</span>
           </a>
-          <a data-release="arxiv" href="#" aria-disabled="true">
+          <a data-release="arxiv" href="https://arxiv.org/abs/2609.01526" target="_blank" rel="noreferrer">
             <svg class="resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 3 14 18M19 3l-6 8M11 13l-6 8"/></svg>
             <span>arXiv</span>
           </a>
@@ -220,8 +220,13 @@
       <section class="citation-section page-width narrow" id="citation">
         <h2>Citation</h2>
         <div class="citation-box">
-          <div><span>BibTeX</span><button type="button" data-copy-bib disabled>Available after release</button></div>
-          <pre><code data-bibtex>BibTeX will be available after the arXiv release.</code></pre>
+          <div><span>BibTeX</span><button type="button" data-copy-bib disabled>Copy</button></div>
+          <pre><code data-bibtex>@article{zhao2026evoscm,
+  title={{EvoSCM}: Scientific Belief Revision Through Causal Model Evolution and Experimentation},
+  author={Zhao, Qing and Li, Haowei and Deng, Weijian and Yang, Sibei and Wei, Pengxu and Lin, Liang},
+  journal={arXiv preprint arXiv:2609.01526},
+  year={2026}
+}</code></pre>
         </div>
       </section>
     </main>
@@ -230,6 +235,6 @@
       <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close figure">×</button>
       <div><img src="" alt="" data-lightbox-image /><p data-lightbox-caption></p></div>
     </dialog>
-    <script src="assets/js/site.js?v=20260928-preprint"></script>
+    <script src="assets/js/site.js?v=20260929-arxiv-bibtex"></script>
   </body>
 </html>
